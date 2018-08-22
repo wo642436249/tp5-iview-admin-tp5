@@ -19,6 +19,8 @@ tp5-iview-admin V1.0其主要目的是为了做一个最基本的包括管理员
  
  > 包含中间件如下：
  + 基于JWT的认证
+ 
+ > view地址：https://github.com/wo642436249/tp5-iview-admin-iview
 
 ## 主要问题（逐渐调整）
 + 人员-角色-操作验证未开发
