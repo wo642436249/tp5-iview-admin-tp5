@@ -11,7 +11,7 @@ class Role extends Controller
 {
     /**
      * Explain:后台权限列表
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/10
      * Time: 14:21
      * @return \think\response\Json
@@ -25,7 +25,7 @@ class Role extends Controller
 
     /**
      * Explain:添加角色
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/13
      * Time: 16:06
      * @return \think\response\Json
@@ -43,7 +43,7 @@ class Role extends Controller
 
     /**
      * Explain:更新角色
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/13
      * Time: 16:26
      * @return \think\response\Json
@@ -61,7 +61,7 @@ class Role extends Controller
 
     /**
      * Explain:删除角色
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/13
      * Time: 16:06
      * @param $id

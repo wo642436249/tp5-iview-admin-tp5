@@ -9,7 +9,7 @@ class User extends Controller
 {
     /**
      * Explain:获取所有后台用户
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/7
      * Time: 14:21
      */
@@ -22,7 +22,7 @@ class User extends Controller
 
     /**
      * Explain:获取用户详细信息
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/7
      * Time: 13:41
      * @param string token 客户端发送的token值
@@ -42,7 +42,7 @@ class User extends Controller
 
     /**
      * Explain:新增管理员
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/17
      * Time: 10:19
      * @return \think\response\Json
@@ -71,7 +71,7 @@ class User extends Controller
 
     /**
      * Explain:删除管理员
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/17
      * Time: 10:25
      * @param $id

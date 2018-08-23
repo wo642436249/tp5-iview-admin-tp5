@@ -8,7 +8,7 @@ class File extends Controller
 {
     /**
      * Explain:删除文件
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/16
      * Time: 16:54
      * @return \think\response\Json

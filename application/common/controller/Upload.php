@@ -8,7 +8,7 @@ class Upload extends Controller
 {
     /**
      * Explain:上传头像
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/16
      * Time: 15:34
      * @return \think\response\Json

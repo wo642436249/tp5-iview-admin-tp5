@@ -10,7 +10,7 @@ class Rule extends Controller
 {
     /**
      * Explain:获取所有后台菜单
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/9
      * Time: 8:36
      * @return \think\response\Json
@@ -30,7 +30,7 @@ class Rule extends Controller
 
     /**
      * Explain:新增菜单
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/10
      * Time: 8:50
      * @param array pid父级菜单id listorder 菜单排序序号 title 标题
@@ -50,7 +50,7 @@ class Rule extends Controller
 
     /**
      * Explain:更新菜单
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/10
      * Time: 9:34
      * @param array id 菜单id pid父级菜单id listorder 菜单排序序号 title 标题
@@ -70,7 +70,7 @@ class Rule extends Controller
 
     /**
      * Explain: 删除菜单
-     * User: 徐涵诚
+     * User: Xhc
      * Date: 2018/8/10
      * Time: 9:45
      * @param $id 菜单id
