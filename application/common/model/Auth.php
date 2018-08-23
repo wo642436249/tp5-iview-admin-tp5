@@ -3,7 +3,6 @@
 namespace app\common\model;
 
 use \Firebase\JWT\JWT;
-use app\common\enums\ErrorCode;
 
 class Auth
 {
@@ -39,13 +38,13 @@ class Auth
             $data['code'] = 200;
             return $data;
         } catch (\Firebase\JWT\SignatureInvalidException $e) {  //签名不正确
-            return ErrorCode::TOKEN_ABNORMAL;
+            return config('message.TOKEN_ABNORMAL');
         } catch (\Firebase\JWT\BeforeValidException $e) {  // 签名在某个时间点之后才能用
-            return ErrorCode::TOKEN_ABNORMAL;
+            return config('message.TOKEN_ABNORMAL');
         } catch (\Firebase\JWT\ExpiredException $e) {  // token过期
-            return ErrorCode::TOKEN_EXPIRED;
+            return config('message.TOKEN_EXPIRED');
         } catch (Exception $e) {  //其他错误
-            return ErrorCode::NOT_NETWORK;
+            return config('message.NOT_NETWORK');
         }
     }
 }
