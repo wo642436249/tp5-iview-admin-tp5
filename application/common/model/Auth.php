@@ -12,8 +12,8 @@ class Auth
     {
         $nowtime = time();
         $token = [
-            'iss' => 'http://www.dahuawulitou.xyz', //签发者
-            'aud' => 'http://www.dahuawulitou.xyz', //jwt所面向的用户
+            'iss' => 'http://www.abcdefg.xyz', //签发者
+            'aud' => 'http://www.abcdefg.xyz', //jwt所面向的用户
             'iat' => $nowtime, //签发时间
             'nbf' => $nowtime, //在什么时间之后该jwt才可用
             'exp' => $nowtime + 60 * 60 * 2, //过期时间-10min
