@@ -5,8 +5,6 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\AdminRole;
 use app\admin\model\AdminRoleRule;
-use app\common\enums\ErrorCode;
-use app\common\enums\SucceedCode;
 use think\Db;
 
 class Role extends Controller
@@ -37,9 +35,9 @@ class Role extends Controller
         $data = request()->post();
         $menu = AdminRole::create($data);
         if ($menu) {
-            return json(SucceedCode::ADD_SUCCEED);
+            return json(config('message.ADD_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.NOT_NETWORK'));
         }
     }
 
@@ -55,9 +53,9 @@ class Role extends Controller
         $data = request()->put();
         $menu = AdminRole::update($data);
         if ($menu) {
-            return json(SucceedCode::EDIT_SUCCEED);
+            return json(config('message.EDIT_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.EDIT_ERROR'));
         }
     }
 
@@ -77,13 +75,13 @@ class Role extends Controller
             $menu2 = AdminRoleRule::where('role_id', $id)->delete();
             Db::commit();
             if ($menu1 && $menu2) {
-                return json(SucceedCode::DEL_SUCCEED);
+                return json(config('message.DEL_SUCCEED'));
             } else {
-                return json(ErrorCode::NOT_NETWORK);
+                return json(config('message.DEL_ERROR'));
             }
         } catch (\Exception $e) {
             Db::rollback();
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.DEL_ERROR'));
         }
     }
 }

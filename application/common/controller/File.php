@@ -3,8 +3,6 @@
 namespace app\common\controller;
 
 use think\Controller;
-use app\common\enums\SucceedCode;
-use app\common\enums\ErrorCode;
 
 class File extends Controller
 {
@@ -19,9 +17,9 @@ class File extends Controller
     {
         $file_path = request()->post('file_path');
         if (unlink(config('file.public_path') . $file_path)) {
-            return json(SucceedCode::DEL_SUCCEED);
+            return json(config('message.DEL_SUCCEED'));
         } else {
-            return json(ErrorCode::DEL_ERROR);
+            return json(config('message.DEL_ERROR'));
         }
     }
 }

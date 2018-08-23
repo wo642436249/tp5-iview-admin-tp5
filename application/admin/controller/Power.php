@@ -5,8 +5,6 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\AdminRoleRule;
 use app\admin\model\AdminRule;
-use app\common\enums\SucceedCode;
-
 
 class Power extends Controller
 {
@@ -52,6 +50,6 @@ class Power extends Controller
         } else {
             AdminRoleRule::create(['role_id' => $role_id, 'rule_id' => $rules]);
         }
-        return json(SucceedCode::EDIT_SUCCEED);
+        return json(config('message.EDIT_SUCCEED'));
     }
 }

@@ -10,7 +10,5 @@
 // +----------------------------------------------------------------------
 
 return [
-    'app\common\command\WebSocket',
-    'app\common\command\Socket',
-    'app\common\command\WebWorker',
+
 ];

@@ -4,8 +4,6 @@ namespace app\admin\controller;
 
 use think\Controller;
 use app\admin\model\AdminRule;
-use app\common\enums\ErrorCode;
-use app\common\enums\SucceedCode;
 use think\facade\Cache;
 
 class Rule extends Controller
@@ -44,9 +42,9 @@ class Rule extends Controller
         $menu = AdminRule::create($data);
         if ($menu) {
             Cache::rm('AdminRule');
-            return json(SucceedCode::ADD_SUCCEED);
+            return json(config('message.ADD_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.ADD_ERROR'));
         }
     }
 
@@ -64,9 +62,9 @@ class Rule extends Controller
         $menu = AdminRule::update($data);
         if ($menu) {
             Cache::rm('AdminRule');
-            return json(SucceedCode::EDIT_SUCCEED);
+            return json(config('message.EDIT_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.EDIT_ERROR'));
         }
     }
 
@@ -84,14 +82,14 @@ class Rule extends Controller
     public function delete($id)
     {
         if (AdminRule::where('pid', $id)->find()) {
-            return json(ErrorCode::DEL_ERROR);
+            return json(config('message.DEL_ERROR'));
         }
         $menu = AdminRule::destroy($id);
         if ($menu) {
             Cache::rm('AdminRule');
-            return json(SucceedCode::DEL_SUCCEED);
+            return json(config('message.DEL_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.DEL_ERROR'));
         }
     }
 }

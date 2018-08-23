@@ -4,8 +4,6 @@ namespace app\admin\controller;
 
 use app\admin\model\AdminUser;
 use think\Controller;
-use app\common\enums\ErrorCode;
-use app\common\enums\SucceedCode;
 
 class User extends Controller
 {
@@ -54,9 +52,9 @@ class User extends Controller
         $data = request()->post('params');
         $user = AdminUser::create($data);
         if ($user) {
-            return json(SucceedCode::ADD_SUCCEED);
+            return json(config('message.ADD_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.ADD_ERROR'));
         }
     }
 
@@ -65,9 +63,9 @@ class User extends Controller
         $data = request()->put('params');
         $menu = AdminUser::update($data);
         if ($menu) {
-            return json(SucceedCode::EDIT_SUCCEED);
+            return json(config('message.EDIT_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.EDIT_ERROR'));
         }
     }
 
@@ -84,9 +82,9 @@ class User extends Controller
     {
         $menu = AdminUser::destroy($id);
         if ($menu) {
-            return json(SucceedCode::DEL_SUCCEED);
+            return json(config('message.DEL_SUCCEED'));
         } else {
-            return json(ErrorCode::NOT_NETWORK);
+            return json(config('message.DEL_ERROR'));
         }
     }
 }

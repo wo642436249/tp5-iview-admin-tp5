@@ -3,8 +3,6 @@
 namespace app\common\controller;
 
 use think\Controller;
-use app\common\enums\SucceedCode;
-use app\common\enums\ErrorCode;
 
 class Upload extends Controller
 {
@@ -20,12 +18,12 @@ class Upload extends Controller
         $file = request()->file('avatar');
         $info = $file->validate(['size' => 1024 * 1024 * 2, 'ext' => 'jpg,png,gif,jpeg'])->move(config('file.public_path') . config('file.avatar_path'));
         if ($info) {
-            $data = SucceedCode::Upload_SUCCEED;
+            $data = config('message.Upload_SUCCEED');
             $data['file']['file_path'] = config('file.avatar_path') . $info->getSaveName();
             $data['file']['file_name'] = $info->getFilename();
             return json($data);
         } else {
-            return json(ErrorCode::Upload_ERROR);
+            return json(config('message.Upload_ERROR'));
         }
     }
 }
